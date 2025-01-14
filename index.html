@@ -691,6 +691,24 @@
 	<script src="js/scrollax.min.js"></script>
 
 	<script src="js/main.js"></script>
+	<script>
+		// Disable right-click
+		document.addEventListener("contextmenu", function (e) {
+		  e.preventDefault();
+		});
+	
+		// Disable keyboard shortcuts for copy
+		document.addEventListener("keydown", function (e) {
+		  if (
+			(e.ctrlKey && e.key === "u") || // Disable Ctrl+U
+			(e.ctrlKey && e.key === "c") || // Disable Ctrl+C
+			(e.ctrlKey && e.shiftKey && e.key === "i") || // Disable Ctrl+Shift+I
+			e.key === "F12" // Disable F12
+		  ) {
+			e.preventDefault();
+		  }
+		});
+	  </script>
 
 </body>
 
